@@ -9,10 +9,13 @@ public class Mainline {
 	Account savings = new Account();
 
 	checking.setAccountId(100);
+	final int checkingAccountId = checking.getAccountId();
+
 	checking.setDescription("My personal checking account");
 	checking.setBalance(500.00);
-	System.out.println(checking.getDescription() + "\nAccount ID: " + checking.getAccountId()
-		+ "\nInitial Balance: " + checking.getBalance());
+
+	System.out.println(checking.getDescription() + "\nAccount ID: " + checkingAccountId + "\nInitial Balance: "
+		+ checking.getBalance());
 
 	System.out.println("---------------------------------------");
 
@@ -28,13 +31,19 @@ public class Mainline {
 	checking.withdraw(300.00);
 	checking.getBalance();
 
+	checking.withdraw(200.00);
+	checking.getBalance();
+
 	// Savings
 	System.out.println("\n\n");
 
 	savings.setAccountId(200);
+	final int savingsAccountId = savings.getAccountId();
+
 	savings.setDescription("My personal savings account");
 	savings.setBalance(1000.00);
-	System.out.println(savings.getDescription() + "\nAccount ID: " + savings.getAccountId() + "\nInitial Balance: "
+
+	System.out.println(savings.getDescription() + "\nAccount ID: " + savingsAccountId + "\nInitial Balance: "
 		+ savings.getBalance());
 
 	System.out.println("---------------------------------------");
@@ -48,6 +57,8 @@ public class Mainline {
 	savings.deposit(200.00);
 	savings.getBalance();
 
+
     }
+
 
 }

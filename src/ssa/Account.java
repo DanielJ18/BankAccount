@@ -6,7 +6,8 @@ public class Account {
     private String description;
     private double balance;
 
-    //method to perform deposit 
+
+    // method to perform deposit
     public void deposit(double depositAmount) {
 
 	this.balance += depositAmount;
@@ -15,8 +16,8 @@ public class Account {
 	System.out.println("---------------------------------------");
 
     }
-    
-    //method to perform withdraw 
+
+    // method to perform withdraw
     public void withdraw(double withdrawAmount) {
 
 	if (this.balance - withdrawAmount < 0) {
@@ -37,8 +38,8 @@ public class Account {
 	}
 
     }
-    
-    //setters and getter for accountId, description and balance 
+
+    // setters and getter for accountId, description and balance
 
     public int getAccountId() {
 	return accountId;
@@ -63,5 +64,6 @@ public class Account {
     public void setBalance(double balance) {
 	this.balance = balance;
     }
+
 
 }
