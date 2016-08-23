@@ -13,7 +13,7 @@ public class Account5 {
 	this.balance += depositAmount;
 
 	System.out.printf("Deposit Amount: %.2f Balance: %.2f\n", depositAmount, this.balance);
-	System.out.println("---------------------------------------");
+	System.out.println("----------------------------------------");
 
     }
 
