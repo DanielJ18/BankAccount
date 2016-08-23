@@ -2,9 +2,10 @@ package ssa;
 
 public class Account {
 
-    private int accountId;
+    private int id;
     private String description;
     private double balance;
+    static int count = 1;
 
     // Account account1 = new Account();
     // Account account2 = new Account();
@@ -13,31 +14,29 @@ public class Account {
 
     public Account() {
 	this.balance = 0;
+	this.id = count;
+	count++;
     }
 
     public Account(String description) {
 	this.description = description;
+	this.id = count;
+	count++;
 
     }
 
-    public Account(int accountId, String description) {
-	this.accountId = accountId;
+    public Account(int id, String description) {
+	this.id = id;
 	this.description = description;
+	this.id = count;
+	count++;
 
     }
 
-    // print method
-
-//    public void print() {
-//	
-//	System.out.printf("Accout: %d, Balance: %.2f \n", getAccountId(), getBalance());
-//	System.out.println("--------------------------------------------------");
-//
-//    }
     
     public String print()
     {
-	String thisIsWhatIwantAndIwantItNow = "Account " + getAccountId() + " balance is $" + getBalance();
+	String thisIsWhatIwantAndIwantItNow = "Account " + getId() + " balance is $" + getBalance();
 	
 	return thisIsWhatIwantAndIwantItNow;
     }
@@ -61,7 +60,7 @@ public class Account {
 
 	this.balance += depositAmount;
 
-	System.out.printf("Accout: %d, deposit: %.2f balance: %.2f\n", getAccountId(), depositAmount, this.balance);
+	System.out.printf("Accout: %d, deposit: %.2f balance: %.2f\n", getId(), depositAmount, this.balance);
 	System.out.println("--------------------------------------------------");
 
     }
@@ -80,7 +79,7 @@ public class Account {
 
 	{
 	    this.balance = this.balance - withdrawAmount;
-	    System.out.printf("Account: %d Withdrawal: %.2f  balance: %.2f\n", getAccountId(), withdrawAmount, this.balance);
+	    System.out.printf("Account: %d Withdrawal: %.2f  balance: %.2f\n", getId(), withdrawAmount, this.balance);
 
 	    System.out.println("--------------------------------------------------");
 
@@ -90,12 +89,12 @@ public class Account {
 
     // setters and getter for accountId, description and balance
 
-    public int getAccountId() {
-	return accountId;
+    public int getId() {
+	return id;
     }
 
-    private void setAccountId(int accountId) {
-	this.accountId = accountId;
+    private void setId(int accountId) {
+	this.id = id;
     }
 
     public String getDescription() {
