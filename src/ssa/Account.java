@@ -57,18 +57,29 @@ public class Account {
 
     // method to perform deposit
     public void deposit(double depositAmount) {
+	
+	if (depositAmount >0)
+	{
+	// this.setBalance(this.getBalance () + depositAmount);
+	//return this.getBalance;
 
 	this.balance += depositAmount;
 
 	System.out.printf("Accout: %d, deposit: %.2f balance: %.2f\n", getId(), depositAmount, this.balance);
 	System.out.println("--------------------------------------------------");
-
+	}
+	
+	else
+	    
+	{
+	    System.out.println("Deposit not valid");
+	}
     }
 
     // method to perform withdraw
     public void withdraw(double withdrawAmount) {
 
-	if (this.balance - withdrawAmount < 0) {
+	if (this.balance - withdrawAmount < 0 && withdrawAmount >0) {
 
 	    System.out.println("Insufficent funds." + "\nYour withdrawal of: " + withdrawAmount + " NOT approved. "
 		    + "\nYour balance is: " + this.balance);
@@ -93,7 +104,7 @@ public class Account {
 	return id;
     }
 
-    private void setId(int accountId) {
+    private void setId(int id) {
 	this.id = id;
     }
 
